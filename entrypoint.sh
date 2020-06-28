@@ -42,9 +42,19 @@ fi
 
 if [ -z "$INPUT_PROD" ]
 then
-  fleet
+  if [ -z "$INPUT_VERBOSE" ]
+  then
+    fleet
+  else
+    fleet -v
+  fi
 else
-  fleet -p
+  if [ -z "$INPUT_VERBOSE" ]
+  then
+    fleet -p
+  else
+    fleet -p -v
+  fi
 fi
 
 if [ -n "$INPUT_WORKINGDIRECTORY" ]

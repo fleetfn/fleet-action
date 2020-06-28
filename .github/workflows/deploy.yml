@@ -21,4 +21,5 @@ jobs:
         apiToken: ${{ secrets.FLEET_API_TOKEN }}
         prod: true
         projectId: ${{ secrets.FLEET_PROJECT_ID }}
+        verbose: true
         workingDirectory: 'test'

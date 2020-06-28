@@ -16,6 +16,9 @@ inputs:
   projectId:
     description: "The Fleet project ID where Fleet should deploy"
     required: true
+  verbose:
+    description: "Enables debug mode to show more details of the deployment"
+    required: false
   workingDirectory:
     description: "The relative path which Fleet CLI commands should be run from"
     required: true
