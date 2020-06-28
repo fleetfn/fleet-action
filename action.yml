@@ -1,0 +1,21 @@
+name: "Deploy Serverless Function to Fleet Function"
+branding:
+  icon: "upload-cloud"
+  color: "blue"
+description: "Deploy your Fleet Function apps directly from GitHub, using Fleet CLI"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+inputs:
+  apiToken:
+    description: "Your Fleet Personal Access Token"
+    required: true
+  prod:
+    description: "Sets the deployment to production"
+    required: false
+  projectId:
+    description: "The Fleet project ID where Fleet should deploy"
+    required: true
+  workingDirectory:
+    description: "The relative path which Fleet CLI commands should be run from"
+    required: true

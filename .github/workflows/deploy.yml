@@ -1,0 +1,24 @@
+on: push
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Lint
+    steps:
+    - uses: actions/checkout@v2
+    - name: Lint shell script
+      uses: azohra/shell-linter@v0.3.0
+      with:
+        path: "entrypoint.sh"
+  publish:
+    runs-on: ubuntu-latest
+    name: Publish service
+    steps:
+    - uses: actions/checkout@v2
+    - name: Publish service
+      uses: ./
+      with:
+        apiToken: ${{ secrets.FLEET_API_TOKEN }}
+        prod: true
+        projectId: ${{ secrets.FLEET_PROJECT_ID }}
+        workingDirectory: 'test'
